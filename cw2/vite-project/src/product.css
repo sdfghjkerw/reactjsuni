@@ -1,0 +1,36 @@
+.product{
+    border: 1px solid;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px;
+    background-color: #333;
+}
+
+.product h2{
+    margin-top: 0;
+    color: red;
+}
+
+.product p{
+    margin: 7px;
+}
+
+.price{
+    color: yellow;
+    font-size: 15px;
+}
+.out-of-stock{
+    color: pink;
+    font-weight: 15px;
+}
+
+.tags{
+    margin-top: 20px;
+}
+.tag{
+    display: inline-block;
+    margin-right: 8px;
+    padding: 4px 10px;
+    font-style: 15px;
+}
