@@ -1,0 +1,19 @@
+header{
+  background-color: black;
+  color: azure;
+  padding: 10px;
+  text-align: center;
+}
+
+h1{
+  padding: 25%;
+}
+footer{
+  background-color: black;
+  color: azure;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
