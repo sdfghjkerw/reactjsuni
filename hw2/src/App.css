@@ -1,0 +1,11 @@
+.app{
+  text-align: center;
+  padding: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.user-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}

@@ -1,0 +1,17 @@
+.user-card{
+    background-color: rgb(42, 83, 159);
+    border: 1px solid #000000;
+    border-radius: 15px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 4px 7px black;
+    transition: transform 0.2s;
+}
+
+.user-card:hover{
+    transform: scale(1);
+}
+
+.user-card h2{
+    font-size: 25px;
+}
