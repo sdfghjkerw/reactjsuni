@@ -1,0 +1,32 @@
+.container{
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+h1{
+  margin-left: 60px;
+}
+.inp{
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+}
+.inp input{
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+
+}
+.inp button{
+  background-color: brown;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5;
+}
+
+.inp button:hover{
+  background-color: rgb(112, 27, 27);
+}
+
+.spsk{
+  list-style:decimal;
+}
