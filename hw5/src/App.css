@@ -1,0 +1,77 @@
+.main{
+  max-width: 500px;
+  margin: auto 0;
+  padding: 70px;
+}
+
+.cont{
+    background-color: darkgray;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+label{
+  font-size: 10px;
+  text-align: center;
+}
+
+.secCont{
+  display: flex;
+  justify-content: space-between;
+}
+
+.input, textarea, select{
+  width: 90%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.emNpass{
+  display: flex;
+}
+
+.RadButton{
+  display: flex;
+  margin-right: 50px;
+  margin-top: 35px;
+}
+.RadButton label{
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.RadButton1{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.error{
+  color: red;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.submitbtn{
+  width: 100%;
+  background-color: rgb(67, 138, 67);
+  color: white;
+  border-radius: 5px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+}
+.submitbtn:hover{
+  background-color: green;
+}
+
+.contThird{
+  display: flex;
+}
+
+.cityy{
+  padding-right: 30px;
+}
