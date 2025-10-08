@@ -1,70 +1,50 @@
 import React from "react"
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from "yup"
 import "./App.css"
 
 const App = () => {
   const initialValues={fullName:"", email:"", password:"", course:"", gender:"", datebirth:"", 
     city:"", country:"", education:"", address:"", state:"", zip:""}
-  const validate = (values) => {
-    const errors = {}
+  
+    const validationScheme = Yup.object({
+      fullName: Yup.string()
+      .required("Full name is required"),
 
-    if(!values.fullName){
-      errors.fullName = "Full name is required"
-    }
+      email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
 
-    if (!values.email) {
-      errors.email = "Email is required";
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-    ) {
-      errors.email = "Invalid email address";
-    }
+      password: Yup.string()
+      .min(6, "Password must be at least 6 characters")
+      .required("Password is required"),
 
-    if (!values.password) {
-      errors.password = "Password is required"
-    } else if (values.password.lenght < 6){
-      errors.password = "Password must be at least 6 characters"
-    }
+      course: Yup.string()
+      .required("Please select a course"),
 
-    if(!values.course){
-      errors.course = "Please select a course"
-    }
+      gender: Yup.string()
+      .required("Please select gender"),
 
-    if(!values.gender){
-      errors.gender = "Please select gender"
-    }
-        
-    if(!values.datebirth){
-      errors.datebirth = "Date of birth is required"
-    }
+      datebirth: Yup.date()
+      .required("Date of birth is required"),
 
-    if(!values.city){
-      errors.city = "City is required"
-    }
+      city: Yup.string()
+      .required("City is required"),
 
-    if(!values.country){
-      errors.country = "Country is required"
-    }
+      country: Yup.string()
+      .required("Country is required"),
 
-    if(!values.zip && !/^[0-9]+$/.test(values.zip)){
-      errors.zip = "Zip contained only numbers"
-    }
-
-    return errors
-  }
-
-  const onSubmit = (values, {resetForm}) => {
-    alert(JSON.stringify(values, null, 2))
-    resetForm()
-  }
+      zip: Yup.string()
+      .matches(/^[0-9]+$/, "Zip contained only numbers")
+    })
 
   return(
     <div className="main">
       <div className="cont">
       <h1>Course Application</h1>
       <Formik initialValues={initialValues}
-      validate={validate}
-      onSubmit={onSubmit}
+      validationSchema={validationScheme}
+      onSubmit={(values) => {alert(JSON.stringify(values, null, 2))}}
       >
       {({errors, touched}) => (
         <Form>
@@ -85,7 +65,8 @@ const App = () => {
           <label><Field name="course" type="radio" value="Course B"/>Course B</label>
           <label><Field name="course" type="radio" value="Course C"/>Course C</label>
         </div>
-        <ErrorMessage name="courses" component="div" className="error"></ErrorMessage>
+
+        <ErrorMessage name="course" component="div" className="error"></ErrorMessage>
 
         <div className="secCont">
           <div className="datebirth">
@@ -95,10 +76,10 @@ const App = () => {
           </div>
           <div className="Gender">
             <div className="RadButton">
-              <label><Field name="gender" type="radio" value="Male"/>Male</label>
-              <label><Field name="gender" type="radio" value="Female"/>Female</label>
-            </div>
+            <label><Field name="gender" type="radio" value="Female"/>Female</label>
+            <label><Field name="gender" type="radio" value="male"/>male</label>
             <ErrorMessage name="gender" component="div" className="error"></ErrorMessage>
+            </div>
           </div>
         </div>
 
@@ -116,7 +97,7 @@ const App = () => {
           <div className="cityy">
             <Field name="city"className="input" type="text" placeholder="city"></Field>
 
-            <Field name="State"className="input" type="text" placeholder="state"></Field>
+            <Field name="state"className="input" type="text" placeholder="state"></Field>
           </div>
           
           <div>
